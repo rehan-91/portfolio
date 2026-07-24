@@ -46,6 +46,10 @@ const personSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
 
+  verification: {
+    google: "WqlZXcKikBv_7lv3ZCUbzIHGvRMyhV89y_hIv--EeHU",
+  },
+
   title: {
     default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`,
