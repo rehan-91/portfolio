@@ -20,6 +20,32 @@ export const DATA = {
   location: "New Delhi / Noida, India",
   locationLink: "https://maps.google.com/?q=Noida,India",
   description:"Laravel Full Stack Developer specializing in enterprise web applications, scalable backend architecture, REST APIs, React, AI integrations, and business automation.",
+
+  seo: {
+    title: "Md Rehan Nawaz | Laravel Full Stack Developer",
+
+    description:
+      "Laravel Full Stack Developer with 6+ years of experience building enterprise CRM, Banking, AI-powered, POS and scalable web applications using Laravel, React, PHP and MySQL.",
+
+    twitter: "@Legendry_basher",
+
+    keywords: [
+      "Md Rehan Nawaz",
+      "Laravel Developer",
+      "Full Stack Developer",
+      "PHP Developer",
+      "React Developer",
+      "Laravel Portfolio",
+      "Laravel India",
+      "MySQL",
+      "Enterprise CRM",
+      "AI Integration",
+      "REST API",
+      "Banking Application",
+      "Portfolio",
+    ],
+  },
+
   summary: `Laravel Full Stack Developer with **6+ years of professional experience** building enterprise-grade web applications using Laravel, PHP, React, MySQL, and modern web technologies.
 
 I specialize in developing secure, scalable, and business-focused software including **CRM platforms, POS systems, Digital Banking Applications, AI-powered Marketplaces, HRM solutions, Investment Platforms, Franchise Management Systems, and Enterprise APIs**.

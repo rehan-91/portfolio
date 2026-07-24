@@ -20,21 +20,54 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
 });
 
+const SITE_NAME = DATA.name;
+const SITE_TITLE = DATA.seo.title;
+const SITE_DESCRIPTION = DATA.seo.description;
+
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
+
   title: {
-    default: DATA.name,
-    template: `%s | ${DATA.name}`,
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: DATA.description,
+
+  description: SITE_DESCRIPTION,
+
+  keywords: DATA.seo.keywords,
+
+  authors: [
+    {
+      name: SITE_NAME,
+      url: DATA.url,
+    },
+  ],
+
+  creator: SITE_NAME,
+
+  publisher: SITE_NAME,
+
+  alternates: {
+    canonical: DATA.url,
+  },
+
   openGraph: {
-    title: `${DATA.name}`,
-    description: DATA.description,
+    title: SITE_TITLE,
+    description: `Explore the portfolio of ${SITE_NAME}, a Laravel Full Stack Developer with 6+ years of experience in enterprise software, CRM systems, banking platforms, AI integrations and scalable web applications.`,
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description:
+      "Laravel Full Stack Developer • Enterprise Applications • Banking • AI • React",
+    creator: DATA.seo.twitter,
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -45,14 +78,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  twitter: {
-    title: `${DATA.name}`,
-    card: "summary_large_image",
-  },
-  verification: {
-    google: "",
-    yandex: "",
   },
 };
 
