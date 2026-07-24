@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
   description: SITE_DESCRIPTION,
 
-  keywords: DATA.seo.keywords,
+  keywords: [...DATA.seo.keywords],
 
   authors: [
     {
