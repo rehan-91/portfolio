@@ -34,7 +34,7 @@ const personSchema = {
   description: SITE_DESCRIPTION,
   address: {
     "@type": "PostalAddress",
-    addressLocality: DATA.location,,
+    addressLocality: DATA.location,
     addressCountry: "IN",
   },
   sameAs: [
