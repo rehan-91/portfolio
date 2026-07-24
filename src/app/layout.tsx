@@ -24,6 +24,25 @@ const SITE_NAME = DATA.name;
 const SITE_TITLE = DATA.seo.title;
 const SITE_DESCRIPTION = DATA.seo.description;
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: DATA.name,
+  url: DATA.url,
+  image: `${DATA.url}${DATA.avatarUrl}`,
+  jobTitle: "Laravel Full Stack Developer",
+  description: SITE_DESCRIPTION,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: DATA.location,,
+    addressCountry: "IN",
+  },
+  sameAs: [
+    DATA.contact.social.GitHub.url,
+    DATA.contact.social.LinkedIn.url,
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
 
@@ -88,6 +107,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
+      </head>
+
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
