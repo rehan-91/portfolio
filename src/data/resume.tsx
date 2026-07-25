@@ -206,7 +206,7 @@ I enjoy transforming complex business requirements into secure, maintainable, an
         },
       ],
       access: "public",
-      image:"/projects/car.png",
+      image:"/projects/car.webp",
       video: "",
     },
 
@@ -235,7 +235,7 @@ I enjoy transforming complex business requirements into secure, maintainable, an
           },
         ],
       access: "private",
-      image: "/projects/pos-crm.png",
+      image: "/projects/pos-crm.webp",
       video: "",
     },
 
@@ -265,7 +265,7 @@ I enjoy transforming complex business requirements into secure, maintainable, an
           },
         ],
       access: "private",
-      image: "/projects/digital-banking.png",
+      image: "/projects/digital-banking.webp",
       video: "",
     },
 
@@ -294,7 +294,7 @@ I enjoy transforming complex business requirements into secure, maintainable, an
           },
         ],
       access: "private",
-      image: "/projects/investment-platform.png",
+      image: "/projects/investment-platform.webp",
       video: "",
     },
 
@@ -324,7 +324,7 @@ I enjoy transforming complex business requirements into secure, maintainable, an
           },
         ],
       access: "private",
-      image: "/projects/business-management.png",
+      image: "/projects/business-management.webp",
       video: "",
     },
 
@@ -354,7 +354,7 @@ I enjoy transforming complex business requirements into secure, maintainable, an
           },
         ],
       access: "private",
-      image: "/projects/lead-management-ai.png",
+      image: "/projects/lead-management-ai.webp",
       video: "",
     },
   ],
