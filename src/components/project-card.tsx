@@ -34,6 +34,7 @@ interface Props {
   link?: string;
   image?: string;
   video?: string;
+  access: "public" | "private";
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -49,6 +50,7 @@ export function ProjectCard({
   dates,
   tags,
   link,
+  access,
   image,
   video,
   links,
@@ -62,6 +64,8 @@ export function ProjectCard({
       )}
     >
       <div className="relative shrink-0">
+
+      {access === "public" ? (
         <Link
           href={href || "#"}
           target="_blank"
@@ -83,9 +87,30 @@ export function ProjectCard({
             <div className="w-full h-48 bg-muted" />
           )}
         </Link>
-        {links && links.length > 0 && (
-          <div className="absolute top-2 right-2 flex flex-wrap gap-2">
-            {links.map((link, idx) => (
+      ) : (
+        <>
+          {video ? (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-48 object-cover"
+            />
+          ) : image ? (
+            <ProjectImage src={image} alt={title} />
+          ) : (
+            <div className="w-full h-48 bg-muted" />
+          )}
+        </>
+      )}
+
+
+    {links && links.length > 0 && (
+        <div className="absolute top-2 right-2 flex flex-wrap gap-2">
+          {links.map((link, idx) =>
+            access === "public" ? (
               <Link
                 href={link.href}
                 key={idx}
@@ -101,9 +126,20 @@ export function ProjectCard({
                   {link.type}
                 </Badge>
               </Link>
-            ))}
-          </div>
-        )}
+            ) : (
+              <Badge
+                key={idx}
+                className="flex items-center gap-1.5 text-xs bg-black text-white hover:bg-black/90"
+                variant="default"
+              >
+                {link.icon}
+                {link.type}
+              </Badge>
+            )
+          )}
+        </div>
+      )}
+
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-2">
@@ -111,15 +147,19 @@ export function ProjectCard({
             <h3 className="font-semibold">{title}</h3>
             <time className="text-xs text-muted-foreground">{dates}</time>
           </div>
-          <Link
-            href={href || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
-            aria-label={`Open ${title}`}
-          >
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
-          </Link>
+          
+          {access === "public" && (
+            <Link
+              href={href || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+              aria-label={`Open ${title}`}
+            >
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </Link>
+          )}
+
         </div>
         <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
           <Markdown>{description}</Markdown>

@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, Cloud, Brain } from "lucide-react";
+import { HomeIcon, Cloud, Brain, Lock } from "lucide-react";
 import {
   SiLaravel,
   SiPhp,
@@ -200,11 +200,12 @@ I enjoy transforming complex business requirements into secure, maintainable, an
       ],
       links: [
         {
-          type: "Website",
+          type: "Live Website",
           href: "https://car.detailingdevils.com/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
+      access: "public",
       image:"/projects/car.png",
       video: "",
     },
@@ -226,7 +227,14 @@ I enjoy transforming complex business requirements into secure, maintainable, an
         "AWS",
         "JavaScript",
       ],
-      links: [],
+      links: [
+          {
+            type: "Private Project",
+            href: "#",
+            icon: <Lock className="size-3" />,
+          },
+        ],
+      access: "private",
       image: "/projects/pos-crm.png",
       video: "",
     },
@@ -249,7 +257,14 @@ I enjoy transforming complex business requirements into secure, maintainable, an
         "Events",
         "REST API",
       ],
-      links: [],
+       links: [
+          {
+            type: "Confidential Banking",
+            href: "#",
+            icon: <Lock className="size-3" />,
+          },
+        ],
+      access: "private",
       image: "/projects/digital-banking.png",
       video: "",
     },
@@ -271,7 +286,14 @@ I enjoy transforming complex business requirements into secure, maintainable, an
         "Mail",
         "Service Layer",
       ],
-      links: [],
+      links: [
+          {
+            type: "Investor Platform",
+            href: "#",
+            icon: <Lock className="size-3" />,
+          },
+        ],
+      access: "private",
       image: "/projects/investment-platform.png",
       video: "",
     },
@@ -294,7 +316,14 @@ I enjoy transforming complex business requirements into secure, maintainable, an
         "Inventory",
         "Reporting",
       ],
-      links: [],
+      links: [
+          {
+            type: " Enterprise Platform",
+            href: "#",
+            icon: <Lock className="size-3" />,
+          },
+        ],
+      access: "private",
       image: "/projects/business-management.png",
       video: "",
     },
@@ -317,7 +346,14 @@ I enjoy transforming complex business requirements into secure, maintainable, an
         "AI Speech-to-Text",
         "SQL Optimization",
       ],
-      links: [],
+      links: [
+          {
+            type: "Internal System",
+            href: "#",
+            icon: <Lock className="size-3" />,
+          },
+        ],
+      access: "private",
       image: "/projects/lead-management-ai.png",
       video: "",
     },
